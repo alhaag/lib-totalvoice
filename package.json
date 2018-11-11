@@ -1,0 +1,13 @@
+{
+  "name": "lib-totalvoice",
+  "version": "1.0.0",
+  "description": "Biblioteca NodeJS para consumo de recursos da API TotalVoice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "André Luiz Haag",
+  "license": "MIT",
+  "dependencies": {
+  }
+}

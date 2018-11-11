@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+
+  #
+  # API TOTAL VOICE FAKE
+  # #############################################
+  api-fake:
+    image: ttv-node
+    hostname: api-fake
+    ports:
+      - 3001:3000
+    environment:
+      NODE_ENV: 'development'
+      TZ: "America/Sao_Paulo"
+    volumes:
+      - "../:/var/www/html"
+    command: >
+       sh -c "ln -snf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime &&
+       echo America/Sao_Paulo > /etc/timezone &&
+       cd /var/www/html/example && npm run startApiFake"
+
+  #
+  # API MAIN
+  # #############################################
+  app-totalvoice:
+    image: ttv-node
+    hostname: app-totalvoice
+    ports:
+      - 3000:3000
+    environment:
+      NODE_ENV: 'development'
+      TZ: "America/Sao_Paulo"
+    volumes:
+      - "../:/var/www/html"
+    command: >
+       sh -c "ln -snf /usr/share/zoneinfo/America/Sao_Paulo /etc/localtime &&
+       echo America/Sao_Paulo > /etc/timezone &&
+       cd /var/www/html/example && npm start"
+    depends_on:
+      - api-fake
+    links:
+      - api-fake
