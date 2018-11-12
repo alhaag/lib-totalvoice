@@ -1,6 +1,6 @@
 # lib-totalvoice
 
-Biblioteca NodeJS com zero depenências para para consumo da API da TotalVoice.
+Biblioteca NodeJS com zero dependências para para consumo da API da TotalVoice.
 
 https://api.totalvoice.com.br/doc/
 
