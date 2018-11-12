@@ -1,4 +1,4 @@
-# Aplicação de exemplo para consumo da lib-totalvoice
+# lib-totalvoice
 
 Biblioteca NodeJS com zero depenências para para consumo da API da TotalVoice.
 
